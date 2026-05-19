@@ -2,14 +2,17 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #222222;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
+  --font-poppins: var(--font-poppins);
+  --color-primary: #0c4da2;
+  --color-secondary: #ff6100;
+  --height-web: calc(100vh - 7.75rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +25,55 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #f7941d;
+  color: #ffffff;
+}
+
+.quote-input {
+  min-height: 48px;
+  border: 1px solid #e3e3e3;
+  background: #ffffff;
+  padding: 0 16px;
+  color: #222222;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.quote-input:focus {
+  border-color: #f7941d;
+  box-shadow: 0 0 0 3px rgba(247, 148, 29, 0.15);
+}
+
+.footer-input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0 14px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-input:focus {
+  border-color: #f7941d;
+  background: rgba(255, 255, 255, 0.12);
 }
