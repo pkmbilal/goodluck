@@ -1,221 +1,420 @@
 import Image from "next/image";
-import HeroSlider from "@/components/HeroSlider";
-import MobileDrawer from "@/components/MobileDrawer";
 
+const phoneNumber = "+966 50 000 0000";
+const email = "sales@goodlucksa.com";
 const whatsappNumber = "966500000000";
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Hello Good Luck Scrap, I want a scrap metal quote.",
 )}`;
 
 const navItems = [
-  ["HOME", "/"],
-  ["ABOUT", "/about"],
-  ["METAL RECYCLING", "/recycling"],
-  ["DEMOLISHING", "/demolition"],
-  ["CONTACT US", "/contact"],
+  ["Services", "#services"],
+  ["Materials", "#materials"],
+  ["Process", "#process"],
+  ["Contact", "#contact"],
 ];
 
-const tabs = [
-  ["ABOUT US", "/about"],
-  ["BUY FROM US", "/buyfromus"],
-  ["SELL TO US", "/selltous"],
-  ["CONTACT US", "/contact"],
+const trustItems = [
+  ["Rapid coordination", "Pickup planning for workshops, yards, factories, and active project sites."],
+  ["Clear weighing", "Material is reviewed by type so the quote discussion stays practical."],
+  ["Mixed metal loads", "Support for ferrous, non-ferrous, cable, pipe, panel, and surplus material."],
+  ["Saudi industrial focus", "Built for contractors, warehouses, demolition teams, and commercial operators."],
 ];
 
 const services = [
   {
-    title: "SCRAP METAL RECYCLING",
-    image: "/assets/images/scarp-hero-1.webp",
-    alt: "scrap metal recycling",
+    title: "Scrap metal buying",
+    text: "Direct buying support for steel, copper, aluminium, brass, zinc, cables, and common industrial scrap.",
+    image: "/assets/images/service-scrap-metal-buying.png",
   },
   {
-    title: "SCRAP METAL COLLECTION",
-    image: "/assets/images/scrap-hero-2.webp",
-    alt: "scrap metal collection",
+    title: "Metal recycling",
+    text: "Sorting and handling support that moves recoverable metal into cleaner recycling and reuse channels.",
+    image: "/assets/images/service-metal-recycling.png",
   },
   {
-    title: "BUYING & SELLING",
-    image: "/assets/images/scrap-hero-3.webp",
-    alt: "buying and selling",
+    title: "Site collection",
+    text: "Collection coordination for workshops, warehouses, construction sites, and recurring scrap loads.",
+    image: "/assets/images/service-site-collection.png",
   },
   {
-    title: "WASTE MANAGEMENT",
-    image: "/assets/images/scarp-hero-1.webp",
-    alt: "waste management consultancy",
+    title: "Demolition scrap clearance",
+    text: "Recovery support for steel, pipes, panels, cables, and reusable metal from demolition projects.",
+    image: "/assets/images/service-demolition-clearance.png",
+  },
+  {
+    title: "Industrial surplus",
+    text: "Buying and selling support for excess stock, yard clearance, and usable surplus material.",
+    image: "/assets/images/service-industrial-surplus.png",
   },
 ];
 
-const products = [
-  ["GRANULAR COPPER", "/assets/images/Granular-Copper.webp", "granular copper"],
-  ["STAINLESS STEEL", "/assets/images/Stainless-Steel.webp", "stainless steel"],
-  ["CS PIPES", "/assets/images/cs-pipes.webp", "cs pipes"],
-  ["CONTAINERS", "/assets/images/Containers.webp", "containers"],
-  ["BILLETS", "/assets/images/Billets.webp", "billets"],
-  ["CABLES", "/assets/images/Cables.webp", "cables"],
-  ["PANEL BOARDS", "/assets/images/Panel-Boards.webp", "panel boards"],
-  ["COPPER BERRY CABLE", "/assets/images/Copper-Berry-Cable.webp", "copper berry cable"],
-  ["BRASS SCRAP", "/assets/images/Brass-Scrap.webp", "brass scrap"],
-  ["ALUMINIUM SCRAP", "/assets/images/Aluminium-Scrap.webp", "aluminium scrap"],
+const materials = [
+  ["Copper", "/assets/images/Copper.webp"],
+  ["Aluminium", "/assets/images/Aluminium.webp"],
+  ["Stainless steel", "/assets/images/Stainless-Steel.webp"],
+  ["Brass scrap", "/assets/images/Brass-Scrap.webp"],
+  ["Cables", "/assets/images/Cables.webp"],
+  ["CS pipes", "/assets/images/cs-pipes.webp"],
+  ["Panel boards", "/assets/images/Panel-Boards.webp"],
+  ["Containers", "/assets/images/Containers.webp"],
+  ["Zinc", "/assets/images/Zinc.webp"],
+  ["Billets", "/assets/images/Billets.webp"],
 ];
 
-function SocialIcon({ type }) {
-  const paths = {
-    facebook:
-      "M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z",
-    instagram:
-      "M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32Z",
-    linkedin:
-      "M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32.3-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z",
-  };
+const processSteps = [
+  ["01", "Share details", "Send the material type, photos if available, site location, and estimated quantity."],
+  ["02", "Plan pickup", "We coordinate inspection, access, loading needs, and collection timing."],
+  ["03", "Sort and weigh", "Material is reviewed by category so the quote conversation is clear."],
+  ["04", "Confirm value", "We agree the next step for payment, pickup, or recurring material supply."],
+];
 
+const advantages = [
+  "Direct communication for time-sensitive clearance work.",
+  "Practical handling for both mixed and sorted metal loads.",
+  "Experience with factories, contractors, warehouses, and demolition sites.",
+  "A cleaner path for reusable metal resources and industrial surplus.",
+];
+
+const industries = [
+  "Contractors",
+  "Factories",
+  "Workshops",
+  "Warehouses",
+  "Demolition companies",
+  "Construction sites",
+];
+
+function ArrowIcon() {
   return (
-    <svg className="h-7 w-7 fill-white transition hover:fill-secondary" viewBox="0 0 448 512" aria-hidden="true">
-      <path d={paths[type]} />
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4">
+      <path
+        d="M5 12h14m0 0-5-5m5 5-5 5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.6"
+      />
     </svg>
   );
 }
 
-function TopbarContact() {
+function CheckIcon() {
   return (
-    <div className="hidden items-center justify-center gap-6 sm:flex">
-      <div className="flex items-center">
-        <svg className="h-5 w-5 stroke-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" aria-hidden="true">
-          <path strokeLinecap="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
-        </svg>
-        <p className="ml-1 align-middle text-[16px] text-white">sales@goodlucksa.com</p>
-      </div>
-      <div className="flex items-center">
-        <svg className="h-5 w-5 fill-white" viewBox="0 0 512 512" aria-hidden="true">
-          <path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7l-49.3-40.3c-13.7-11.2-18.4-30-11.6-46.3l40-96z" />
-        </svg>
-        <p className="ml-1 align-middle text-[16px] text-white">+966 50 000 0000</p>
-      </div>
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="m5 12.6 4.1 4L19 7"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.65"
+      />
+    </svg>
+  );
+}
+
+function Badge({ children, light = false }) {
+  return <p className={light ? "badge badge-light" : "badge"}>{children}</p>;
+}
+
+function CtaLink({ href, children, variant = "primary" }) {
+  return (
+    <a href={href} className={variant === "primary" ? "luxury-button luxury-button-primary" : "luxury-button luxury-button-secondary"}>
+      <span>{children}</span>
+      <span className="luxury-button-icon">
+        <ArrowIcon />
+      </span>
+    </a>
+  );
+}
+
+function SectionIntro({ eyebrow, title, text, light = false }) {
+  return (
+    <div className="max-w-3xl">
+      <Badge light={light}>{eyebrow}</Badge>
+      <h2 className={light ? "section-title text-stone-50" : "section-title text-zinc-950"}>{title}</h2>
+      {text ? <p className={light ? "section-copy text-stone-300" : "section-copy text-zinc-600"}>{text}</p> : null}
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <main className="relative bg-white font-poppins text-black">
-      <header className="w-full bg-primary">
-        <div className="flex h-11 w-full items-center justify-center border-b-2 border-solid border-slate-400 px-8 sm:justify-between">
-          <TopbarContact />
-          <div className="flex items-center gap-1">
-            <a href="#" aria-label="Facebook">
-              <SocialIcon type="facebook" />
+    <main className="min-h-screen overflow-hidden bg-[#f5f0e7] text-zinc-950">
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
+
+      <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4 md:pt-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/55 bg-[#f5f0e7]/86 px-4 py-3 shadow-[0_24px_80px_-58px_rgba(24,24,27,0.72)] backdrop-blur-xl md:px-5">
+          <a href="#" className="group inline-flex items-center gap-3" aria-label="Good Luck Scrap home">
+            <span className="grid h-11 w-11 place-items-center rounded-full bg-zinc-950 text-xs font-bold text-[#f5f0e7] transition duration-500 ease-luxury group-hover:bg-[#6d5b2f]">
+              GLS
+            </span>
+            <span className="hidden text-xs font-bold uppercase tracking-[0.24em] text-zinc-900 sm:block">Good Luck Scrap</span>
+          </a>
+
+          <nav className="hidden items-center gap-1 rounded-full bg-white/45 p-1 text-sm font-semibold text-zinc-600 lg:flex" aria-label="Primary navigation">
+            {navItems.map(([label, href]) => (
+              <a key={label} href={href} className="rounded-full px-4 py-2 transition duration-500 ease-luxury hover:bg-zinc-950 hover:text-white">
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <a href={`tel:${phoneNumber.replaceAll(" ", "")}`} className="hidden text-sm font-bold text-zinc-900 transition duration-500 ease-luxury hover:text-[#6d5b2f] md:block">
+              {phoneNumber}
             </a>
-            <a href="#" aria-label="Instagram">
-              <SocialIcon type="instagram" />
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <SocialIcon type="linkedin" />
+            <a href={whatsappHref} className="nav-quote">
+              Quote
+              <span className="nav-quote-dot" />
             </a>
           </div>
-        </div>
-
-        <div className="flex h-20 w-full items-center justify-between bg-primary px-8">
-          <a href="#" className="text-3xl font-bold text-white transition hover:text-secondary">
-            GLS
-          </a>
-          <nav>
-            <ul className="hidden items-center justify-end gap-5 font-semibold text-white sm:flex">
-              {navItems.map(([item, href], index) => (
-                <li key={item}>
-                  <a href={href} className={index === 0 ? "text-secondary" : "hover:text-secondary"}>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <MobileDrawer navItems={navItems} />
         </div>
       </header>
 
-      <HeroSlider whatsappHref={whatsappHref} />
-
-      <section>
-        <div className="grid gap-y-3 px-8 pt-8 sm:grid-cols-2 sm:gap-x-5 lg:grid-cols-4">
-          {tabs.map(([tab, href], index) => (
-            <a key={tab} href={href} className={index === 2 ? "col-span-1 sm:col-span-2 lg:col-span-1" : "col-span-1"}>
-              <div className="flex w-full items-center justify-center rounded-sm bg-primary px-5 py-10 text-2xl font-bold text-white transition hover:bg-secondary">
-                <h2>{tab}</h2>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section id="about">
-        <div className="mb-6 px-8 pb-4 pt-8 text-center xl:px-40">
-          <h1 className="mb-2 text-4xl font-bold text-secondary">SCRAP SERVICES IN SAUDI ARABIA</h1>
-          <p className="mb-2 text-lg">
-            Good Luck Scrap buys and sells ferrous and non-ferrous metal including iron, aluminium, steel, copper, zinc, cables, and industrial surplus.
-          </p>
-          <p className="mb-2 text-lg">
-            Our team helps customers arrange collection, sorting, weighing, and quote coordination for commercial and industrial scrap.
-          </p>
-          <h3 className="mb-2 text-xl font-semibold">Reliable scrap buying support</h3>
-          <p className="mb-2 text-lg">
-            We work with workshops, contractors, warehouses, and factories that need clear communication and fast collection.
-          </p>
-        </div>
-      </section>
-
-      <section id="metal-recycling">
-        <div className="mb-8 grid gap-y-5 px-8 sm:grid-cols-2 sm:gap-x-5 lg:grid-cols-4">
-          {services.map((service) => (
-            <div key={service.title} className="col-span-1 overflow-hidden shadow-xl">
-              <div className="relative h-[210px]">
-                <Image className="rounded-t-md object-cover" src={service.image} alt={service.alt} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
-                <div className="absolute left-0 top-0 z-20 h-full w-full rounded-t-md bg-black opacity-30" />
-              </div>
-              <a href={whatsappHref}>
-                <div className="rounded-b-md bg-primary p-3 text-center transition hover:bg-secondary">
-                  <h2 className="text-xl font-bold text-white">{service.title}</h2>
-                </div>
+      <section id="main-content" className="relative isolate min-h-[100dvh] overflow-hidden px-4 pb-10 pt-28 text-white md:px-8 md:pb-14 md:pt-32">
+        <Image
+          src="/assets/images/hero-vibrant-scrap-yard.png"
+          alt="Industrial scrap yard with excavator handling metal"
+          fill
+          priority
+          sizes="100vw"
+          className="-z-30 object-cover"
+        />
+        <div className="absolute inset-0 -z-20 bg-zinc-950/48" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_20%,rgba(216,197,139,0.22),transparent_32%),linear-gradient(90deg,rgba(23,21,19,0.8),rgba(23,21,19,0.42)_46%,rgba(23,21,19,0.2))]" />
+        <div className="mx-auto flex min-h-[calc(100dvh-10.5rem)] max-w-7xl items-center">
+          <div className="max-w-5xl">
+            <Badge light>Scrap buying and recycling</Badge>
+            <h1 className="max-w-5xl text-[3.35rem] font-semibold leading-[0.88] tracking-[-0.035em] text-white sm:text-[4.6rem] lg:text-[6.2rem] xl:text-[6.8rem]">
+              Industrial scrap, handled with discipline.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-stone-200 md:text-lg">
+              Good Luck Scrap supports Saudi businesses with buying, selling, collection, sorting, and recycling for ferrous and non-ferrous metal.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <CtaLink href={whatsappHref}>Request quote</CtaLink>
+              <a href={`tel:${phoneNumber.replaceAll(" ", "")}`} className="luxury-button luxury-button-hero">
+                <span>Call now</span>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-20 md:px-8 md:pb-28">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-zinc-950 text-stone-50 md:grid-cols-4">
+          {trustItems.map(([title, text]) => (
+            <article key={title} className="border-b border-white/10 p-7 md:border-b-0 md:border-r md:p-8 md:last:border-r-0">
+              <p className="text-lg font-semibold">{title}</p>
+              <p className="mt-3 text-sm leading-6 text-stone-400">{text}</p>
+            </article>
           ))}
         </div>
       </section>
 
-      <section>
-        <div className="mb-6 flex flex-col items-center justify-center">
-          <h1 className="mb-2 text-4xl font-bold text-secondary">PRODUCTS</h1>
-          <p className="mb-2 text-lg">LARGEST INVENTORY OF YOUR CHOICE</p>
+      <section id="services" className="px-4 py-20 md:px-8 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <SectionIntro
+              eyebrow="Services"
+              title="A refined service flow for demanding sites."
+              text="The page now feels less like a product grid and more like a professional industrial partner: fewer blocks, stronger hierarchy, and clearer conversion points."
+            />
+            <p className="max-w-xl text-base leading-7 text-zinc-600 lg:justify-self-end">
+              Every section is designed to help a buyer quickly understand what can be collected, how the process works, and how to start the quote conversation.
+            </p>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-12">
+            {services.map((service, index) => (
+              <article
+                key={service.title}
+                className={`group relative min-h-[28rem] overflow-hidden rounded-[2rem] bg-zinc-950 ${
+                  index === 0 ? "lg:col-span-7" : index === 1 ? "lg:col-span-5" : "lg:col-span-4"
+                }`}
+              >
+                <Image
+                  src={service.image}
+                  alt={`${service.title} material`}
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover opacity-72 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-86"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,24,27,0.04),rgba(24,24,27,0.86))]" />
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c58b]">0{index + 1}</p>
+                  <h3 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">{service.title}</h3>
+                  <p className="mt-4 max-w-xl text-base leading-7 text-stone-300">{service.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="mb-8 grid gap-5 px-8 sm:grid-cols-2 lg:grid-cols-5">
-          {products.map(([title, image, alt]) => (
-            <div key={title} className="relative col-span-1">
-              <div className="relative aspect-square w-full">
-                <Image className="rounded-md object-cover" src={image} alt={alt} fill sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw" />
-              </div>
-              <div className="absolute bottom-0 left-0 z-10 flex h-12 w-full items-center justify-center rounded-b-md bg-black opacity-80" />
-              <div className="absolute bottom-0 left-0 z-20 flex h-12 w-full items-center justify-center px-2 text-center">
-                <h2 className="text-lg font-bold text-secondary">{title}</h2>
-              </div>
+      </section>
+
+      <section id="materials" className="bg-[#171513] px-4 py-24 text-stone-50 md:px-8 md:py-36">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <SectionIntro
+              eyebrow="Materials"
+              title="High-value metals and industrial surplus, presented clearly."
+              text="The materials section keeps the visual proof customers expect, but with darker finishing and quieter labels."
+              light
+            />
+            <p className="max-w-2xl text-base leading-7 text-stone-400 lg:justify-self-end">
+              Acceptance depends on material condition, quantity, location, and loading requirements. Send photos and site details for the fastest response.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
+            {materials.map(([title, image], index) => (
+              <article
+                key={title}
+                className={`group relative overflow-hidden rounded-[1.35rem] bg-zinc-900 ${
+                  index === 0 || index === 7 ? "md:row-span-2 md:aspect-auto" : "aspect-square"
+                }`}
+              >
+                <Image
+                  src={image}
+                  alt={`${title} scrap material`}
+                  fill
+                  sizes="(min-width: 768px) 20vw, 50vw"
+                  className="object-cover opacity-78 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-95"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.04),rgba(23,21,19,0.78))]" />
+                <h3 className="absolute bottom-0 left-0 right-0 p-4 text-sm font-semibold text-white md:text-base">{title}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="process" className="px-4 py-24 md:px-8 md:py-36">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <SectionIntro
+              eyebrow="How it works"
+              title="From first message to cleared material."
+              text="The process is intentionally simple so a customer can act quickly from mobile."
+            />
+            <CtaLink href={whatsappHref}>Start on WhatsApp</CtaLink>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-4">
+            {processSteps.map(([number, title, text]) => (
+              <article key={number} className="rounded-[1.6rem] bg-[#ede5d9] p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">{number}</p>
+                <h3 className="mt-9 text-2xl font-semibold tracking-tight text-zinc-950">{title}</h3>
+                <p className="mt-4 text-base leading-7 text-zinc-600">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-24 md:px-8 md:py-36">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="relative overflow-hidden rounded-[2.2rem] bg-[#d8cec0] p-2">
+            <div className="relative min-h-[32rem] overflow-hidden rounded-[1.75rem] bg-zinc-950">
+              <Image
+                src="/assets/images/demolition2.webp"
+                alt="Recoverable metal and demolition scrap at an industrial site"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover opacity-82"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,24,27,0.02),rgba(24,24,27,0.72))]" />
             </div>
-          ))}
+          </div>
+
+          <div>
+            <SectionIntro
+              eyebrow="Why choose us"
+              title="Professional handling when scrap is slowing down the work."
+              text="The experience should feel calm, direct, and reliable. No clutter. No exaggerated promises. Just a strong industrial service offer."
+            />
+            <div className="mt-9 grid gap-4">
+              {advantages.map((item) => (
+                <div key={item} className="flex gap-4 rounded-[1.25rem] bg-[#ede5d9] p-5">
+                  <span className="mt-1 text-[#6d5b2f]">
+                    <CheckIcon />
+                  </span>
+                  <p className="text-base leading-7 text-zinc-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer id="contact">
-        <div className="flex h-auto w-full flex-col items-center border-2 border-solid border-gray-200 px-8 py-2 sm:flex-row sm:justify-center lg:h-16 lg:justify-between">
-          <div className="hidden items-center justify-start gap-4 lg:flex">
-            <a href="#" className="font-bold text-primary underline underline-offset-4 hover:decoration-secondary">
-              MAIN MENU
-            </a>
-            <a href="/contact" className="font-bold text-primary underline underline-offset-4 hover:decoration-secondary">
-              CONTACT US
-            </a>
-            <a href={whatsappHref} className="font-bold text-primary underline underline-offset-4 hover:decoration-secondary">
-              QUICK QUOTE
-            </a>
+      <section className="px-4 py-24 md:px-8 md:py-36">
+        <div className="mx-auto max-w-7xl rounded-[2.4rem] bg-zinc-950 p-6 text-stone-50 md:p-12 lg:p-16">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <SectionIntro
+              eyebrow="Industries served"
+              title="Built for places where material needs to move."
+              text="Good Luck Scrap supports businesses with real site constraints: access, timing, loading, sorting, and recurring material flow."
+              light
+            />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {industries.map((industry) => (
+                <div key={industry} className="rounded-[1.25rem] bg-white/[0.06] p-5 text-sm font-semibold text-stone-100 ring-1 ring-white/10">
+                  {industry}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex items-center justify-between py-5 text-center">
-            <p>Copyright 2026 Good Luck Scrap | All Rights Reserved</p>
+        </div>
+      </section>
+
+      <section id="contact" className="px-4 pb-24 md:px-8 md:pb-36">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.4rem] bg-[#d8c58b] lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="p-7 md:p-12 lg:p-16">
+            <Badge>Quick quote</Badge>
+            <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] tracking-[-0.03em] text-zinc-950 md:text-6xl">
+              Send the material details. We will respond with the next step.
+            </h2>
           </div>
+          <div className="bg-[#f9f5ee] p-7 md:p-12 lg:p-16">
+            <p className="text-xl font-semibold tracking-tight text-zinc-950">Quote by WhatsApp</p>
+            <p className="mt-4 text-base leading-7 text-zinc-600">
+              Include material type, pickup location, photos if available, and approximate quantity.
+            </p>
+            <div className="mt-8 grid gap-3">
+              <CtaLink href={whatsappHref}>Open WhatsApp</CtaLink>
+              <a href={`mailto:${email}`} className="luxury-button luxury-button-secondary justify-center">
+                <span>{email}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-[#171513] px-4 text-stone-50 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 py-10 md:grid-cols-[1fr_auto]">
+          <div>
+            <p className="text-lg font-semibold">Good Luck Scrap</p>
+            <p className="mt-2 max-w-xl text-sm leading-6 text-stone-400">
+              Scrap metal buying, recycling, collection, and industrial surplus support for Saudi businesses.
+            </p>
+          </div>
+          <div className="grid gap-2 text-sm text-stone-300 md:text-right">
+            <a href={`tel:${phoneNumber.replaceAll(" ", "")}`} className="transition duration-500 ease-luxury hover:text-white">
+              {phoneNumber}
+            </a>
+            <a href={`mailto:${email}`} className="transition duration-500 ease-luxury hover:text-white">
+              {email}
+            </a>
+            <p>Saudi Arabia</p>
+          </div>
+        </div>
+        <div className="border-t border-white/10 py-5 text-center text-xs text-stone-500">
+          Copyright 2026 Good Luck Scrap. All rights reserved.
         </div>
       </footer>
     </main>

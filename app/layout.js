@@ -1,25 +1,22 @@
-import { Poppins } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata = {
-  title: "Good Luck Scrap",
+  title: "Good Luck Scrap | Scrap Metal Buying and Recycling",
   description:
-    "Scrap metal pickup and quote handling for workshops, factories, warehouses, and commercial sites.",
+    "Good Luck Scrap provides scrap metal buying, collection, recycling, and industrial surplus support for businesses in Saudi Arabia.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${poppins.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${outfit.variable} antialiased`}>
+      <body>{children}</body>
     </html>
   );
 }
