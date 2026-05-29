@@ -3,7 +3,7 @@ import { Badge } from "./SharedUi";
 
 export default function TrustSection() {
   return (
-    <section className="relative z-20 -mt-20 px-4 pb-12 pt-0 md:-mt-28 md:px-8 md:pb-16 lg:-mt-32">
+    <section className="relative z-20 -mt-28 px-4 pb-12 pt-0 md:-mt-28 md:px-8 md:pb-16 lg:-mt-32">
       <div className="mx-auto max-w-7xl">
         <div className="overflow-hidden rounded-[2.25rem] border border-[#d8c58b]/28 bg-[#171513] text-stone-50 shadow-[0_42px_110px_-72px_rgba(23,21,19,0.88)]">
           <div className="grid lg:grid-cols-[0.78fr_1.22fr]">
