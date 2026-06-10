@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { contact, getPhoneHref, getWhatsappHref, homeNavItems, servicesNavItems } from "./homeData";
+import { contact, getPhoneHref, getWhatsappHref, homeNavItems } from "./homeData";
 import MobileNavDrawer from "./MobileNavDrawer";
 
 function WhatsappIcon() {
@@ -20,8 +20,8 @@ function WhatsappIcon() {
 export default function SiteHeader({ navItems = homeNavItems }) {
   const pathname = usePathname();
   const whatsappHref = getWhatsappHref();
-  const isServicesPage = pathname === "/services";
-  const resolvedNavItems = isServicesPage && navItems === homeNavItems ? servicesNavItems : navItems;
+  const activeRoute = pathname === "/services" || pathname === "/materials" ? pathname : null;
+  const resolvedNavItems = navItems;
 
   return (
     <header className="fixed inset-x-0 top-0 z-[80] px-4 pt-4 md:pt-6">
@@ -34,8 +34,8 @@ export default function SiteHeader({ navItems = homeNavItems }) {
         </Link>
 
         <nav className="hidden items-center gap-1 rounded-full bg-white/45 p-1 text-sm font-semibold text-zinc-600 lg:flex" aria-label="Primary navigation">
-          {resolvedNavItems.map(([label, href], index) => {
-            const isActive = isServicesPage && index === 0;
+          {resolvedNavItems.map(([label, href]) => {
+            const isActive = href === activeRoute;
 
             return (
               <a
@@ -46,7 +46,7 @@ export default function SiteHeader({ navItems = homeNavItems }) {
                   isActive ? "bg-zinc-950 text-white" : "hover:bg-zinc-950 hover:text-white"
                 }`}
               >
-              {label}
+                {label}
               </a>
             );
           })}
@@ -61,7 +61,7 @@ export default function SiteHeader({ navItems = homeNavItems }) {
             <span>Get a quote</span>
           </a>
           <MobileNavDrawer
-            activeHref={isServicesPage ? "#services" : undefined}
+            activeHref={activeRoute}
             navItems={resolvedNavItems}
             phoneHref={getPhoneHref()}
             phoneNumber={contact.phoneNumber}

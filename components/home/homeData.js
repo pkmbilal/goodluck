@@ -5,21 +5,18 @@ export const contact = {
   whatsappMessage: "Hello Good Luck Scrap, I want a scrap metal quote.",
 };
 
-export const homeNavItems = [
+export const siteNavItems = [
   ["Services", "/services"],
-  ["Materials", "#materials"],
+  ["Materials", "/materials"],
   ["Process", "#process"],
   ["Contact", "#contact"],
 ];
 
-export const servicesNavItems = [
-  ["Services", "#services"],
-  ["Materials", "#materials"],
-  ["Process", "#process"],
-  ["Contact", "#contact"],
-];
+export const homeNavItems = siteNavItems;
+export const servicesNavItems = siteNavItems;
+export const materialsNavItems = siteNavItems;
 
-export const navItems = homeNavItems;
+export const navItems = siteNavItems;
 
 export const trustItems = [
   ["Rapid coordination", "Pickup planning for workshops, yards, factories, and active project sites."],
