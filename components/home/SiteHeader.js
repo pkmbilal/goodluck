@@ -20,7 +20,7 @@ function WhatsappIcon() {
 export default function SiteHeader({ navItems = homeNavItems }) {
   const pathname = usePathname();
   const whatsappHref = getWhatsappHref();
-  const activeRoute = pathname === "/services" || pathname === "/materials" ? pathname : null;
+  const activeRoute = ["/services", "/materials", "/industries"].includes(pathname) ? pathname : null;
   const resolvedNavItems = navItems;
 
   return (

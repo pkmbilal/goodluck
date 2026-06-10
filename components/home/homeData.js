@@ -8,13 +8,14 @@ export const contact = {
 export const siteNavItems = [
   ["Services", "/services"],
   ["Materials", "/materials"],
-  ["Process", "#process"],
+  ["Industries", "/industries"],
   ["Contact", "#contact"],
 ];
 
 export const homeNavItems = siteNavItems;
 export const servicesNavItems = siteNavItems;
 export const materialsNavItems = siteNavItems;
+export const industriesNavItems = siteNavItems;
 
 export const navItems = siteNavItems;
 
