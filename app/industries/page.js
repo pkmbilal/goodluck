@@ -77,8 +77,8 @@ export default function IndustriesPage() {
         className="relative isolate min-h-[84dvh] overflow-hidden px-4 pb-12 pt-10 text-white md:min-h-[100dvh] md:px-8 md:pb-14 md:pt-32"
       >
         <Image
-          src="/assets/images/generated-why-choose-scrap-yard.png"
-          alt="Industrial scrap yard prepared for collection"
+          src="/assets/images/service-site-collection.png"
+          alt="Scrap material collection at an industrial site"
           fill
           priority
           sizes="100vw"

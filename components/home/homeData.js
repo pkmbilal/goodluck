@@ -9,7 +9,7 @@ export const siteNavItems = [
   ["Services", "/services"],
   ["Materials", "/materials"],
   ["Industries", "/industries"],
-  ["Contact", "#contact"],
+  ["Contact", "/contact"],
 ];
 
 export const homeNavItems = siteNavItems;
