@@ -1,4 +1,9 @@
-import { contact, getPhoneHref, getWhatsappHref, navItems } from "./homeData";
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { contact, getPhoneHref, getWhatsappHref, homeNavItems } from "./homeData";
 import MobileNavDrawer from "./MobileNavDrawer";
 
 function WhatsappIcon() {
@@ -12,25 +17,39 @@ function WhatsappIcon() {
   );
 }
 
-export default function SiteHeader() {
+export default function SiteHeader({ navItems = homeNavItems }) {
+  const pathname = usePathname();
   const whatsappHref = getWhatsappHref();
+  const activeRoute = ["/services", "/materials", "/industries", "/contact"].includes(pathname) ? pathname : null;
+  const resolvedNavItems = navItems;
 
   return (
     <header className="fixed inset-x-0 top-0 z-[80] px-4 pt-4 md:pt-6">
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/55 bg-[#f5f0e7]/86 px-4 py-3 shadow-[0_24px_80px_-58px_rgba(24,24,27,0.72)] backdrop-blur-xl md:px-5">
-        <a href="#" className="group inline-flex items-center gap-3" aria-label="Good Luck Scrap home">
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-zinc-950 text-xs font-bold text-[#f5f0e7] transition duration-500 ease-luxury group-hover:bg-[#6d5b2f]">
-            GLS
+        <Link href="/" className="group inline-flex items-center gap-3" aria-label="Good Luck Scrap home">
+          <span className="grid h-11 w-11 overflow-hidden rounded-full bg-zinc-950 transition duration-500 ease-luxury group-hover:scale-[1.02]">
+            <Image src="/logo.webp" alt="" width={44} height={44} className="h-full w-full object-cover" />
           </span>
           <span className="hidden text-xs font-bold uppercase tracking-[0.24em] text-zinc-900 sm:block">Good Luck Scrap</span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 rounded-full bg-white/45 p-1 text-sm font-semibold text-zinc-600 lg:flex" aria-label="Primary navigation">
-          {navItems.map(([label, href]) => (
-            <a key={label} href={href} className="rounded-full px-4 py-2 transition duration-500 ease-luxury hover:bg-zinc-950 hover:text-white">
-              {label}
-            </a>
-          ))}
+          {resolvedNavItems.map(([label, href]) => {
+            const isActive = href === activeRoute;
+
+            return (
+              <a
+                key={label}
+                href={href}
+                aria-current={isActive ? "page" : undefined}
+                className={`rounded-full px-4 py-2 transition duration-500 ease-luxury ${
+                  isActive ? "bg-zinc-950 text-white" : "hover:bg-zinc-950 hover:text-white"
+                }`}
+              >
+                {label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -41,7 +60,13 @@ export default function SiteHeader() {
             <WhatsappIcon />
             <span>Get a quote</span>
           </a>
-          <MobileNavDrawer navItems={navItems} phoneHref={getPhoneHref()} phoneNumber={contact.phoneNumber} whatsappHref={whatsappHref} />
+          <MobileNavDrawer
+            activeHref={activeRoute}
+            navItems={resolvedNavItems}
+            phoneHref={getPhoneHref()}
+            phoneNumber={contact.phoneNumber}
+            whatsappHref={whatsappHref}
+          />
         </div>
       </div>
     </header>
