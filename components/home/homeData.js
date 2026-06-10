@@ -1,16 +1,25 @@
 export const contact = {
-  phoneNumber: "+966 50 000 0000",
+  phoneNumber: "+966 55 518 9623",
   email: "sales@goodlucksa.com",
-  whatsappNumber: "966500000000",
+  whatsappNumber: "966555189623",
   whatsappMessage: "Hello Good Luck Scrap, I want a scrap metal quote.",
 };
 
-export const navItems = [
+export const homeNavItems = [
+  ["Services", "/services"],
+  ["Materials", "#materials"],
+  ["Process", "#process"],
+  ["Contact", "#contact"],
+];
+
+export const servicesNavItems = [
   ["Services", "#services"],
   ["Materials", "#materials"],
   ["Process", "#process"],
   ["Contact", "#contact"],
 ];
+
+export const navItems = homeNavItems;
 
 export const trustItems = [
   ["Rapid coordination", "Pickup planning for workshops, yards, factories, and active project sites."],

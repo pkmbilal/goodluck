@@ -1,14 +1,20 @@
+import Image from "next/image";
 import { contact, getPhoneHref } from "./homeData";
 
 export default function SiteFooter() {
   return (
     <footer className="bg-[#171513] px-4 text-stone-50 md:px-8">
       <div className="mx-auto grid max-w-7xl gap-8 py-10 md:grid-cols-[1fr_auto]">
-        <div>
+        <div className="flex items-start gap-4">
+          <span className="grid h-12 w-12 shrink-0 overflow-hidden rounded-full bg-zinc-950">
+            <Image src="/logo.webp" alt="" width={48} height={48} className="h-full w-full object-cover" />
+          </span>
+          <div>
           <p className="text-lg font-semibold">Good Luck Scrap</p>
           <p className="mt-2 max-w-xl text-sm leading-6 text-stone-400">
             Scrap metal buying, recycling, collection, and industrial surplus support for Saudi businesses.
           </p>
+          </div>
         </div>
         <div className="grid gap-2 text-sm text-stone-300 md:text-right">
           <a href={getPhoneHref()} className="transition duration-500 ease-luxury hover:text-white">

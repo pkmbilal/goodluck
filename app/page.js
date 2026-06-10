@@ -5,7 +5,6 @@ import MaterialsSection from "@/components/home/MaterialsSection";
 import ProcessSection from "@/components/home/ProcessSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import SiteFooter from "@/components/home/SiteFooter";
-import SiteHeader from "@/components/home/SiteHeader";
 import TrustSection from "@/components/home/TrustSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
 
@@ -16,7 +15,6 @@ export default function Home() {
         Skip to content
       </a>
 
-      <SiteHeader />
       <HeroSection />
       <TrustSection />
       <ServicesSection />

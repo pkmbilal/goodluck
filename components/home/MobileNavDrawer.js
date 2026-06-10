@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import Image from "next/image";
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 
 function MenuIcon() {
@@ -31,37 +32,46 @@ function CloseIcon() {
   );
 }
 
-export default function MobileNavDrawer({ navItems, phoneHref, phoneNumber, whatsappHref }) {
+export default function MobileNavDrawer({ activeHref, navItems, phoneHref, phoneNumber, whatsappHref }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const [shouldRenderDrawer, setShouldRenderDrawer] = useState(false);
   const drawerTitleId = useId();
+  const closeTimerRef = useRef(null);
+  const isMounted = useSyncExternalStore(() => () => {}, () => true, () => false);
 
   function openDrawer() {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+
     setShouldRenderDrawer(true);
+
     window.requestAnimationFrame(() => {
       setIsOpen(true);
     });
   }
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  function closeDrawer() {
+    setIsOpen(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      setShouldRenderDrawer(true);
-      return undefined;
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
     }
 
-    const timer = window.setTimeout(() => {
+    closeTimerRef.current = window.setTimeout(() => {
       setShouldRenderDrawer(false);
+      closeTimerRef.current = null;
     }, 500);
+  }
 
+  useEffect(() => {
     return () => {
-      window.clearTimeout(timer);
+      if (closeTimerRef.current) {
+        window.clearTimeout(closeTimerRef.current);
+      }
     };
-  }, [isOpen]);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -74,7 +84,7 @@ export default function MobileNavDrawer({ navItems, phoneHref, phoneNumber, what
   useEffect(() => {
     function handleKeyDown(event) {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeDrawer();
       }
     }
 
@@ -108,7 +118,7 @@ export default function MobileNavDrawer({ navItems, phoneHref, phoneNumber, what
               isOpen ? "opacity-100" : "opacity-0"
             }`}
             aria-hidden="true"
-            onClick={() => setIsOpen(false)}
+            onClick={closeDrawer}
           />
 
           <aside
@@ -124,17 +134,22 @@ export default function MobileNavDrawer({ navItems, phoneHref, phoneNumber, what
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(216,197,139,0.28),transparent_18rem)]" />
 
             <div className="relative flex items-center justify-between gap-4 border-b border-[#6d5b2f]/14 pb-5">
-              <div>
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 overflow-hidden rounded-full bg-zinc-950">
+                  <Image src="/logo.webp" alt="" width={44} height={44} className="h-full w-full object-cover" />
+                </span>
+                <div>
                 <p id={drawerTitleId} className="text-sm font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">
                   Menu
                 </p>
                 <p className="mt-2 text-xl font-semibold tracking-[-0.02em] text-zinc-950">Good Luck Scrap</p>
+                </div>
               </div>
               <button
                 type="button"
                 className="grid h-11 w-11 place-items-center rounded-full border border-[#6d5b2f]/18 bg-white/55 text-zinc-950 transition duration-500 ease-luxury hover:bg-white active:scale-95"
                 aria-label="Close navigation menu"
-                onClick={() => setIsOpen(false)}
+                onClick={closeDrawer}
               >
                 <CloseIcon />
               </button>
@@ -145,8 +160,11 @@ export default function MobileNavDrawer({ navItems, phoneHref, phoneNumber, what
                 <a
                   key={label}
                   href={href}
-                  className="rounded-[1.15rem] border border-[#6d5b2f]/12 bg-[#ede5d9] px-5 py-4 text-lg font-semibold tracking-[-0.01em] text-zinc-950 transition duration-500 ease-luxury hover:bg-[#d8c58b]/42"
-                  onClick={() => setIsOpen(false)}
+                  aria-current={href === activeHref ? "page" : undefined}
+                  className={`rounded-[1.15rem] border border-[#6d5b2f]/12 px-5 py-4 text-lg font-semibold tracking-[-0.01em] text-zinc-950 transition duration-500 ease-luxury ${
+                    href === activeHref ? "bg-zinc-950 text-white" : "bg-[#ede5d9] hover:bg-[#d8c58b]/42"
+                  }`}
+                  onClick={closeDrawer}
                 >
                   {label}
                 </a>
@@ -154,10 +172,10 @@ export default function MobileNavDrawer({ navItems, phoneHref, phoneNumber, what
             </nav>
 
             <div className="relative mt-auto grid gap-3 border-t border-[#6d5b2f]/14 pt-5">
-              <a href={whatsappHref} className="luxury-button luxury-button-primary justify-center" onClick={() => setIsOpen(false)}>
+              <a href={whatsappHref} className="luxury-button luxury-button-primary justify-center" onClick={closeDrawer}>
                 <span>Request quote</span>
               </a>
-              <a href={phoneHref} className="luxury-button luxury-button-secondary justify-center" onClick={() => setIsOpen(false)}>
+              <a href={phoneHref} className="luxury-button luxury-button-secondary justify-center" onClick={closeDrawer}>
                 <span>{phoneNumber}</span>
               </a>
             </div>
