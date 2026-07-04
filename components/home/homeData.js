@@ -9,6 +9,7 @@ export const siteNavItems = [
   ["Services", "/services"],
   ["Materials", "/materials"],
   ["Industries", "/industries"],
+  ["Locations", "/locations"],
   ["Contact", "/contact"],
 ];
 
