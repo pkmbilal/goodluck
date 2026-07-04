@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { cityLocations, cityPagePath } from "@/app/locations/locationData";
 import { contact, getPhoneHref } from "./homeData";
 
 export default function SiteFooter() {
@@ -14,6 +16,13 @@ export default function SiteFooter() {
           <p className="mt-2 max-w-xl text-sm leading-6 text-stone-400">
             Scrap metal buying, recycling, collection, and industrial surplus support for Saudi businesses.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-stone-300">
+            {cityLocations.map((city) => (
+              <Link key={city.slug} href={cityPagePath(city)} className="rounded-full border border-white/10 px-3 py-1.5 transition duration-500 ease-luxury hover:border-[#d8c58b]/60 hover:text-white">
+                {city.name}
+              </Link>
+            ))}
+          </div>
           </div>
         </div>
         <div className="grid gap-2 text-sm text-stone-300 md:text-right">
@@ -23,6 +32,9 @@ export default function SiteFooter() {
           <a href={`mailto:${contact.email}`} className="transition duration-500 ease-luxury hover:text-white">
             {contact.email}
           </a>
+          <Link href="/locations" className="transition duration-500 ease-luxury hover:text-white">
+            Saudi service areas
+          </Link>
           <p>Saudi Arabia</p>
         </div>
       </div>
