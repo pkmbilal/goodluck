@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { materials } from "./homeData";
 import { Badge } from "./SharedUi";
 
@@ -20,7 +21,7 @@ export default function MaterialsSection() {
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
           {materials.map(([title, image]) => (
-            <article key={title} className="group relative aspect-square overflow-hidden rounded-[1.35rem] bg-zinc-900">
+            <Link key={title} href="/materials" className="group relative block aspect-square overflow-hidden rounded-[1.35rem] bg-zinc-900">
               <Image
                 src={image}
                 alt={`${title} scrap material`}
@@ -30,7 +31,7 @@ export default function MaterialsSection() {
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.04),rgba(23,21,19,0.78))]" />
               <h3 className="absolute bottom-0 left-0 right-0 p-4 text-sm font-semibold text-white md:text-base">{title}</h3>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

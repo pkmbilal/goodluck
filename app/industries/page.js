@@ -1,13 +1,15 @@
 import Image from "next/image";
 import SiteFooter from "@/components/home/SiteFooter";
 import { Badge, CtaLink, SectionIntro } from "@/components/home/SharedUi";
+import { pageMetadata } from "../seo";
 import { contact, getPhoneHref, getWhatsappHref, industries } from "@/components/home/homeData";
 
-export const metadata = {
-  title: "Industries | Good Luck Scrap",
+export const metadata = pageMetadata({
+  title: "Industrial Scrap Collection for Saudi Businesses",
   description:
-    "See the industries Good Luck Scrap serves, including contractors, factories, workshops, warehouses, demolition companies, and construction sites.",
-};
+    "See how Good Luck Scrap supports contractors, factories, workshops, warehouses, demolition companies, and construction sites with scrap collection in Saudi Arabia.",
+  path: "/industries",
+});
 
 const industryDetails = [
   {

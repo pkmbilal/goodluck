@@ -1,13 +1,15 @@
 import Image from "next/image";
 import SiteFooter from "@/components/home/SiteFooter";
 import { Badge, CtaLink, SectionIntro } from "@/components/home/SharedUi";
+import { pageMetadata } from "../seo";
 import { contact, getPhoneHref, getWhatsappHref, materials } from "@/components/home/homeData";
 
-export const metadata = {
-  title: "Materials | Good Luck Scrap",
+export const metadata = pageMetadata({
+  title: "Scrap Materials and Industrial Surplus",
   description:
-    "Browse the scrap and surplus materials Good Luck Scrap handles, including copper, aluminium, stainless steel, brass, cables, pipes, panels, containers, zinc, and billets.",
-};
+    "Browse scrap materials Good Luck Scrap handles in Saudi Arabia, including copper, aluminium, stainless steel, brass, cables, pipes, panels, containers, zinc, and billets.",
+  path: "/materials",
+});
 
 const materialCatalog = [
   {

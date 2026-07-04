@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { services } from "./homeData";
 import { Badge } from "./SharedUi";
 
@@ -20,9 +21,10 @@ export default function ServicesSection() {
 
         <div className="grid gap-5 lg:grid-cols-12">
           {services.map((service, index) => (
-            <article
+            <Link
               key={service.title}
-              className={`group relative min-h-[28rem] overflow-hidden rounded-[2rem] bg-zinc-950 ${
+              href="/services"
+              className={`group relative block min-h-[28rem] overflow-hidden rounded-[2rem] bg-zinc-950 ${
                 index === 0 ? "lg:col-span-7" : index === 1 ? "lg:col-span-5" : "lg:col-span-4"
               }`}
             >
@@ -39,7 +41,7 @@ export default function ServicesSection() {
                 <h3 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">{service.title}</h3>
                 <p className="mt-4 max-w-xl text-base leading-7 text-stone-300">{service.text}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
