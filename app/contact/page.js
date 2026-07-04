@@ -1,12 +1,14 @@
 import SiteFooter from "@/components/home/SiteFooter";
 import { Badge, CtaLink, SectionIntro } from "@/components/home/SharedUi";
+import { contactJsonLd, JsonLd, pageMetadata } from "../seo";
 import { contact, getPhoneHref, getWhatsappHref, industries } from "@/components/home/homeData";
 
-export const metadata = {
-  title: "Contact | Good Luck Scrap",
+export const metadata = pageMetadata({
+  title: "Contact Good Luck Scrap",
   description:
-    "Contact Good Luck Scrap by phone, WhatsApp, or email for scrap buying, collection, recycling, and industrial surplus support in Saudi Arabia.",
-};
+    "Contact Good Luck Scrap by phone, WhatsApp, or email for scrap metal buying, industrial scrap collection, recycling, and surplus support in Saudi Arabia.",
+  path: "/contact",
+});
 
 const contactMethods = [
   {
@@ -50,6 +52,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f5f0e7] text-zinc-950">
+      <JsonLd data={contactJsonLd()} />
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>

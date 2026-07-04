@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SiteFooter from "@/components/home/SiteFooter";
 import { Badge, CtaLink, SectionIntro } from "@/components/home/SharedUi";
+import { JsonLd, pageMetadata, servicesJsonLd } from "../seo";
 import {
   contact,
   getPhoneHref,
@@ -12,11 +13,12 @@ import {
   trustItems,
 } from "@/components/home/homeData";
 
-export const metadata = {
-  title: "Services | Good Luck Scrap",
+export const metadata = pageMetadata({
+  title: "Scrap Metal Buying and Collection Services",
   description:
-    "Explore Good Luck Scrap services for scrap metal buying, collection, recycling, demolition clearance, and industrial surplus handling in Saudi Arabia.",
-};
+    "Explore Good Luck Scrap services for scrap metal buying, industrial scrap collection, metal recycling, demolition scrap clearance, and surplus handling in Saudi Arabia.",
+  path: "/services",
+});
 
 const serviceCards = [
   {
@@ -55,6 +57,7 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#f5f0e7] text-zinc-950">
+      <JsonLd data={servicesJsonLd(services)} />
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
