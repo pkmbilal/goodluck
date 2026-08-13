@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ✨ Goodluck
 
-## Getting Started
+**A Next.js Web Application**
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-goodluck--wine.vercel.app-6366F1?style=flat-square)](https://goodluck-wine.vercel.app)
+
+---
+
+## 📋 Overview
+
+This repository contains the source code for the **Goodluck** web application, built with Next.js. Built and maintained by **[Codesudio](https://www.codesudio.com)**.
+
+---
+
+## 🧱 Tech Stack
+
+| Layer | Technology |
+|:---|:---|
+| Framework | Next.js |
+| UI Library | React |
+| Fonts | [Geist](https://vercel.com/font) via `next/font` |
+| Hosting | Vercel |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/pkmbilal/goodluck.git
+cd goodluck
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. 🎉
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `app/page.js` — the page auto-updates as you edit.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🖼️ Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+> Add real screenshots by placing image files in `public/screenshots/` and referencing them below.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```markdown
+![Homepage](public/screenshots/homepage.png)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📁 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+goodluck/
+├── app/                # Next.js App Router pages
+├── components/home/    # Home page components
+└── public/             # Static assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ☁️ Deployment
+
+This project is deployed on **[Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)**.
+
+Live at → **[goodluck-wine.vercel.app](https://goodluck-wine.vercel.app)**
+
+For more on deploying Next.js apps, see the [official deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+
+---
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs) — learn about Next.js features and API
+- [Learn Next.js](https://nextjs.org/learn) — an interactive Next.js tutorial
+
+---
+
+## 🏗️ Built & Maintained by
+
+### [Codesudio](https://www.codesudio.com)
+**Custom Software Development • Jubail, Saudi Arabia**
+
+[![Website](https://img.shields.io/badge/🌐_Website-codesudio.com-2ea44f?style=for-the-badge)](https://www.codesudio.com)
+
+© 2026 Codesudio. All rights reserved.
