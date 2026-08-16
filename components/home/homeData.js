@@ -91,6 +91,11 @@ export const industries = [
   "Construction sites",
 ];
 
+export const sliderImages = Array.from({ length: 22 }, (_, i) => ({
+  src: `/home-slider/${i + 1}.webp`,
+  alt: `Good Luck Scrap site and material photo ${i + 1}`,
+}));
+
 export function getWhatsappHref() {
   return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(contact.whatsappMessage)}`;
 }

@@ -1,4 +1,4 @@
-import { contact, getWhatsappHref } from "./homeData";
+import { contact, getPhoneHref, getWhatsappHref } from "./homeData";
 import { Badge, CtaLink } from "./SharedUi";
 
 export default function ContactSection() {
@@ -18,6 +18,9 @@ export default function ContactSection() {
           </p>
           <div className="mt-8 grid gap-3">
             <CtaLink href={getWhatsappHref()}>Open WhatsApp</CtaLink>
+            <a href={getPhoneHref()} className="luxury-button luxury-button-secondary justify-center">
+              <span>{contact.phoneNumber}</span>
+            </a>
             <a href={`mailto:${contact.email}`} className="luxury-button luxury-button-secondary justify-center">
               <span>{contact.email}</span>
             </a>
