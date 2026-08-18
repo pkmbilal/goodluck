@@ -16,7 +16,7 @@ import {
 export const metadata = pageMetadata({
   title: "Scrap Metal Buying and Collection Services",
   description:
-    "Explore Good Luck Scrap services for scrap metal buying, industrial scrap collection, metal recycling, demolition scrap clearance, and surplus handling in Saudi Arabia.",
+    "Explore GoodLuck Scrap services for scrap metal buying, industrial scrap collection, metal recycling, demolition scrap clearance, and surplus handling in Saudi Arabia.",
   path: "/services",
 });
 
@@ -81,7 +81,7 @@ export default function ServicesPage() {
               Scrap buying, collection, and clearance built for working sites.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-stone-200 md:text-lg">
-              Good Luck Scrap helps businesses move metal, surplus, and demolition material through a clear path for inspection, pickup, sorting, and recycling.
+              GoodLuck Scrap helps businesses move metal, surplus, and demolition material through a clear path for inspection, pickup, sorting, and recycling.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">

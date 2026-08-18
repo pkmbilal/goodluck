@@ -2,7 +2,7 @@ export const contact = {
   phoneNumber: "+966 55 518 9623",
   email: "sales@goodlucksa.com",
   whatsappNumber: "966555189623",
-  whatsappMessage: "Hello Good Luck Scrap, I want a scrap metal quote.",
+  whatsappMessage: "Hello GoodLuck Scrap, I want a scrap metal quote.",
 };
 
 export const siteNavItems = [
@@ -93,7 +93,7 @@ export const industries = [
 
 export const sliderImages = Array.from({ length: 22 }, (_, i) => ({
   src: `/home-slider/${i + 1}.webp`,
-  alt: `Good Luck Scrap site and material photo ${i + 1}`,
+  alt: `GoodLuck Scrap site and material photo ${i + 1}`,
 }));
 
 export function getWhatsappHref() {

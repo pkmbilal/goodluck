@@ -7,7 +7,7 @@ import { contact, getPhoneHref, getWhatsappHref, industries } from "@/components
 export const metadata = pageMetadata({
   title: "Industrial Scrap Collection for Saudi Businesses",
   description:
-    "See how Good Luck Scrap supports contractors, factories, workshops, warehouses, demolition companies, and construction sites with scrap collection in Saudi Arabia.",
+    "See how GoodLuck Scrap supports contractors, factories, workshops, warehouses, demolition companies, and construction sites with scrap collection in Saudi Arabia.",
   path: "/industries",
 });
 
@@ -96,7 +96,7 @@ export default function IndustriesPage() {
               Built around the sites where scrap needs to move.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-stone-200 md:text-lg">
-              Good Luck Scrap works with businesses that need practical handling, predictable collection, and clear communication around scrap, surplus, and demolition material.
+              GoodLuck Scrap works with businesses that need practical handling, predictable collection, and clear communication around scrap, surplus, and demolition material.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">

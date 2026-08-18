@@ -23,7 +23,7 @@ export default function Image() {
         }}
       >
         <div style={{ color: "#d8c58b", fontSize: 32, fontWeight: 700, letterSpacing: 4, textTransform: "uppercase" }}>
-          Good Luck Scrap
+          GoodLuck Scrap
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
           <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 0.95, maxWidth: 920 }}>

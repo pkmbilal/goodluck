@@ -9,7 +9,7 @@ import { cityLocations, cityPagePath, locationsItemListJsonLd } from "./location
 export const metadata = pageMetadata({
   title: "Scrap Metal Service Areas in Saudi Arabia",
   description:
-    "Find Good Luck Scrap city service areas for scrap metal buying, industrial scrap collection, recycling, demolition clearance, and surplus handling in Saudi Arabia.",
+    "Find GoodLuck Scrap city service areas for scrap metal buying, industrial scrap collection, recycling, demolition clearance, and surplus handling in Saudi Arabia.",
   path: "/locations",
 });
 

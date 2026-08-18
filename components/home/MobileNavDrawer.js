@@ -136,13 +136,13 @@ export default function MobileNavDrawer({ activeHref, navItems, phoneHref, phone
             <div className="relative flex items-center justify-between gap-4 border-b border-[#6d5b2f]/14 pb-5">
               <div className="flex items-center gap-3">
                 <span className="grid h-11 w-11 overflow-hidden rounded-full bg-zinc-950">
-                  <Image src="/logo.webp" alt="" width={44} height={44} className="h-full w-full object-cover" />
+                  <Image src="/Logo.svg" alt="" width={44} height={44} className="h-full w-full object-cover" />
                 </span>
                 <div>
                 <p id={drawerTitleId} className="text-sm font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">
                   Menu
                 </p>
-                <p className="mt-2 text-xl font-semibold tracking-[-0.02em] text-zinc-950">Good Luck Scrap</p>
+                <p className="mt-2 text-xl font-semibold tracking-[-0.02em] text-zinc-950">GoodLuck Scrap</p>
                 </div>
               </div>
               <button

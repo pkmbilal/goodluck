@@ -12,8 +12,8 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Good Luck Scrap | Scrap Metal Buying and Recycling",
-    template: "%s | Good Luck Scrap",
+    default: "GoodLuck Scrap | Scrap Metal Buying and Recycling",
+    template: "%s | GoodLuck Scrap",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -24,7 +24,7 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Good Luck Scrap | Scrap Metal Buying and Recycling",
+    title: "GoodLuck Scrap | Scrap Metal Buying and Recycling",
     description: siteConfig.description,
     url: siteUrl,
     siteName: siteConfig.name,
@@ -33,7 +33,7 @@ export const metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Good Luck Scrap industrial scrap yard",
+        alt: "GoodLuck Scrap industrial scrap yard",
       },
     ],
     locale: "en_US",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Good Luck Scrap | Scrap Metal Buying and Recycling",
+    title: "GoodLuck Scrap | Scrap Metal Buying and Recycling",
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },

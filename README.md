@@ -1,4 +1,4 @@
-# ✨ Goodluck
+# ✨ GoodLuck
 
 **A Next.js Web Application**
 
@@ -12,7 +12,7 @@
 
 ## 📋 Overview
 
-This repository contains the source code for the **Goodluck** web application, built with Next.js. Built and maintained by **[Codesudio](https://www.codesudio.com)**.
+This repository contains the source code for the **GoodLuck** web application, built with Next.js. Built and maintained by **[Codesudio](https://www.codesudio.com)**.
 
 ---
 

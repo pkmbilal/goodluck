@@ -24,7 +24,7 @@ export default function IndustriesSection() {
             material needs to move.
           </h2>
           <p className="section-copy mx-auto text-stone-300">
-            Good Luck Scrap supports businesses with real site constraints: access, timing, loading, sorting, and recurring material flow.
+            GoodLuck Scrap supports businesses with real site constraints: access, timing, loading, sorting, and recurring material flow.
           </p>
 
           <div className="mt-12 grid w-full grid-cols-2 gap-3 sm:grid-cols-3">

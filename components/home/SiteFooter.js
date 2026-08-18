@@ -9,10 +9,10 @@ export default function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-8 py-10 md:grid-cols-[1fr_auto]">
         <div className="flex items-start gap-4">
           <span className="grid h-12 w-12 shrink-0 overflow-hidden rounded-full bg-zinc-950">
-            <Image src="/logo.webp" alt="" width={48} height={48} className="h-full w-full object-cover" />
+            <Image src="/Logo.svg" alt="" width={48} height={48} className="h-full w-full object-cover" />
           </span>
           <div>
-          <p className="text-lg font-semibold">Good Luck Scrap</p>
+          <p className="text-lg font-semibold">GoodLuck Scrap</p>
           <p className="mt-2 max-w-xl text-sm leading-6 text-stone-400">
             Scrap metal buying, recycling, collection, and industrial surplus support for Saudi businesses.
           </p>
@@ -39,7 +39,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-stone-500">
-        Copyright 2026 Good Luck Scrap. All rights reserved.
+        Copyright 2026 GoodLuck Scrap. All rights reserved.
       </div>
     </footer>
   );

@@ -1,10 +1,10 @@
 export const siteUrl = "https://www.goodlucksa.com";
 
 export const siteConfig = {
-  name: "Good Luck Scrap",
+  name: "GoodLuck Scrap",
   url: siteUrl,
   description:
-    "Good Luck Scrap buys, collects, recycles, and handles industrial scrap metal and surplus material for businesses across Saudi Arabia.",
+    "GoodLuck Scrap buys, collects, recycles, and handles industrial scrap metal and surplus material for businesses across Saudi Arabia.",
   phone: "+966 55 518 9623",
   email: "sales@goodlucksa.com",
   whatsapp: "https://wa.me/966555189623",
@@ -81,7 +81,7 @@ export function businessJsonLd() {
         "@id": `${siteUrl}/#organization`,
         name: siteConfig.name,
         url: siteUrl,
-        logo: absoluteUrl("/logo.webp"),
+        logo: absoluteUrl("/Logo.svg"),
         email: siteConfig.email,
         telephone: siteConfig.phone,
         contactPoint: {
@@ -126,7 +126,7 @@ export function servicesJsonLd(services) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${siteUrl}/services#services`,
-    name: "Good Luck Scrap services",
+    name: "GoodLuck Scrap services",
     itemListElement: services.map((service, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -152,7 +152,7 @@ export function contactJsonLd() {
     "@type": "ContactPage",
     "@id": `${siteUrl}/contact#contact`,
     url: absoluteUrl("/contact"),
-    name: "Contact Good Luck Scrap",
+    name: "Contact GoodLuck Scrap",
     about: {
       "@id": `${siteUrl}/#business`,
     },

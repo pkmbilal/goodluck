@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
 
   return pageMetadata({
     title: `Scrap Metal Buyer in ${city.name}`,
-    description: `Good Luck Scrap supports ${city.name} businesses with scrap metal buying, industrial scrap collection, recycling, demolition clearance, and surplus material handling.`,
+    description: `GoodLuck Scrap supports ${city.name} businesses with scrap metal buying, industrial scrap collection, recycling, demolition clearance, and surplus material handling.`,
     path: cityPagePath(city),
     image: city.image,
   });

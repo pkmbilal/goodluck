@@ -7,7 +7,7 @@ import { contact, getPhoneHref, getWhatsappHref, materials } from "@/components/
 export const metadata = pageMetadata({
   title: "Scrap Materials and Industrial Surplus",
   description:
-    "Browse scrap materials Good Luck Scrap handles in Saudi Arabia, including copper, aluminium, stainless steel, brass, cables, pipes, panels, containers, zinc, and billets.",
+    "Browse scrap materials GoodLuck Scrap handles in Saudi Arabia, including copper, aluminium, stainless steel, brass, cables, pipes, panels, containers, zinc, and billets.",
   path: "/materials",
 });
 

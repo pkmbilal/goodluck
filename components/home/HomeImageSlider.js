@@ -71,65 +71,63 @@ export default function HomeImageSlider() {
   const activeSlide = sliderImages[realIndex];
 
   return (
-    <section className="px-4 pb-12 pt-0 md:px-8 md:pb-16">
-      <div className="mx-auto max-w-7xl">
-        <div
-          className="group relative overflow-hidden rounded-[2rem] bg-zinc-950 shadow-[0_42px_110px_-72px_rgba(23,21,19,0.88)]"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onFocus={() => setIsPaused(true)}
-          onBlur={() => setIsPaused(false)}
-        >
-          <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] md:aspect-[21/9]">
-            <div
-              className={`flex h-full ${withTransition ? "transition-transform duration-700 ease-luxury" : ""}`}
-              style={{ transform: `translateX(-${index * 100}%)` }}
-              onTransitionEnd={handleTransitionEnd}
-            >
-              {trackSlides.map((slide, slideIndex) => (
-                <div key={`${slide.src}-${slideIndex}`} className="relative h-full w-full flex-shrink-0">
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    fill
-                    sizes="100vw"
-                    className="object-cover"
-                    loading={slideIndex === 1 ? "eager" : "lazy"}
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(24,24,27,0.12),transparent_28%,transparent_72%,rgba(24,24,27,0.5))]" />
+    <div className="mx-auto max-w-7xl">
+      <div
+        className="group relative overflow-hidden rounded-[2rem] bg-zinc-950 shadow-[0_42px_110px_-72px_rgba(23,21,19,0.88)]"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onFocus={() => setIsPaused(true)}
+        onBlur={() => setIsPaused(false)}
+      >
+        <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] md:aspect-[21/9]">
+          <div
+            className={`flex h-full ${withTransition ? "transition-transform duration-700 ease-luxury" : ""}`}
+            style={{ transform: `translateX(-${index * 100}%)` }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {trackSlides.map((slide, slideIndex) => (
+              <div key={`${slide.src}-${slideIndex}`} className="relative h-full w-full flex-shrink-0">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  loading={slideIndex === 1 ? "eager" : "lazy"}
+                />
+              </div>
+            ))}
           </div>
-
-          <button
-            type="button"
-            onClick={goPrev}
-            aria-label="Previous slide"
-            className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-zinc-950/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-[#d8c58b]/60 hover:text-[#d8c58b] focus-visible:opacity-100 group-hover:opacity-100"
-          >
-            <span className="rotate-180">
-              <ArrowIcon />
-            </span>
-          </button>
-          <button
-            type="button"
-            onClick={goNext}
-            aria-label="Next slide"
-            className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-zinc-950/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-[#d8c58b]/60 hover:text-[#d8c58b] focus-visible:opacity-100 group-hover:opacity-100"
-          >
-            <ArrowIcon />
-          </button>
-
-          <p className="absolute bottom-5 right-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c58b]">
-            {String(realIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-          </p>
-
-          <p className="sr-only" aria-live="polite">
-            {activeSlide.alt}
-          </p>
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(24,24,27,0.12),transparent_28%,transparent_72%,rgba(24,24,27,0.5))]" />
         </div>
+
+        <button
+          type="button"
+          onClick={goPrev}
+          aria-label="Previous slide"
+          className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-zinc-950/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-[#d8c58b]/60 hover:text-[#d8c58b] focus-visible:opacity-100 group-hover:opacity-100"
+        >
+          <span className="rotate-180">
+            <ArrowIcon />
+          </span>
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          aria-label="Next slide"
+          className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-zinc-950/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-[#d8c58b]/60 hover:text-[#d8c58b] focus-visible:opacity-100 group-hover:opacity-100"
+        >
+          <ArrowIcon />
+        </button>
+
+        <p className="absolute bottom-5 right-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c58b]">
+          {String(realIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </p>
+
+        <p className="sr-only" aria-live="polite">
+          {activeSlide.alt}
+        </p>
       </div>
-    </section>
+    </div>
   );
 }

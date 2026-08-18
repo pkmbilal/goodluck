@@ -4,9 +4,9 @@ import { contactJsonLd, JsonLd, pageMetadata } from "../seo";
 import { contact, getPhoneHref, getWhatsappHref, industries } from "@/components/home/homeData";
 
 export const metadata = pageMetadata({
-  title: "Contact Good Luck Scrap",
+  title: "Contact GoodLuck Scrap",
   description:
-    "Contact Good Luck Scrap by phone, WhatsApp, or email for scrap metal buying, industrial scrap collection, recycling, and surplus support in Saudi Arabia.",
+    "Contact GoodLuck Scrap by phone, WhatsApp, or email for scrap metal buying, industrial scrap collection, recycling, and surplus support in Saudi Arabia.",
   path: "/contact",
 });
 
@@ -68,7 +68,7 @@ export default function ContactPage() {
           <div className="max-w-5xl">
             <Badge light>Contact</Badge>
             <h1 className="max-w-5xl text-[3.2rem] font-semibold leading-[0.9] tracking-[-0.035em] text-white sm:text-[4.4rem] lg:text-[6rem] xl:text-[6.5rem]">
-              Contact Good Luck Scrap directly.
+              Contact GoodLuck Scrap directly.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-stone-200 md:text-lg">
               Use the details below to reach the team by phone, WhatsApp, or email. For the fastest response, send the material type, photos, and the site location together.

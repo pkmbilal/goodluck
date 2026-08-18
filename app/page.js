@@ -1,6 +1,5 @@
 import ContactSection from "@/components/home/ContactSection";
 import HeroSection from "@/components/home/HeroSection";
-import HomeImageSlider from "@/components/home/HomeImageSlider";
 import IndustriesSection from "@/components/home/IndustriesSection";
 import MaterialsSection from "@/components/home/MaterialsSection";
 import ProcessSection from "@/components/home/ProcessSection";
@@ -13,7 +12,7 @@ import { pageMetadata } from "./seo";
 export const metadata = pageMetadata({
   title: "Scrap Metal Buyer and Recycling in Saudi Arabia",
   description:
-    "Good Luck Scrap buys, collects, recycles, and handles ferrous and non-ferrous scrap metal for Saudi businesses, contractors, factories, and demolition sites.",
+    "GoodLuck Scrap buys, collects, recycles, and handles ferrous and non-ferrous scrap metal for Saudi businesses, contractors, factories, and demolition sites.",
   path: "/",
 });
 
@@ -26,7 +25,6 @@ export default function Home() {
 
       <HeroSection />
       <TrustSection />
-      <HomeImageSlider />
       <ServicesSection />
       <MaterialsSection />
       <ProcessSection />

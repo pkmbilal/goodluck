@@ -80,7 +80,7 @@ export function getCityLocation(slug) {
 }
 
 export function getCityWhatsappHref(city) {
-  const message = `Hello Good Luck Scrap, I want a scrap metal quote in ${city.name}.`;
+  const message = `Hello GoodLuck Scrap, I want a scrap metal quote in ${city.name}.`;
   return `https://wa.me/966555189623?text=${encodeURIComponent(message)}`;
 }
 
@@ -125,7 +125,7 @@ export function locationsItemListJsonLd() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${siteUrl}/locations#service-areas`,
-    name: "Good Luck Scrap city service areas",
+    name: "GoodLuck Scrap city service areas",
     itemListElement: cityLocations.map((city, index) => ({
       "@type": "ListItem",
       position: index + 1,
