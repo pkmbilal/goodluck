@@ -73,7 +73,7 @@ export default function HomeImageSlider() {
   return (
     <div className="mx-auto max-w-7xl">
       <div
-        className="group relative overflow-hidden rounded-[2rem] bg-zinc-950 shadow-[0_42px_110px_-72px_rgba(23,21,19,0.88)]"
+        className="group relative overflow-hidden rounded-[2rem] bg-ink shadow-[0_42px_110px_-72px_rgba(14,92,63,0.88)]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocus={() => setIsPaused(true)}
@@ -98,14 +98,14 @@ export default function HomeImageSlider() {
               </div>
             ))}
           </div>
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(24,24,27,0.12),transparent_28%,transparent_72%,rgba(24,24,27,0.5))]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(14,92,63,0.12),transparent_28%,transparent_72%,rgba(14,92,63,0.5))]" />
         </div>
 
         <button
           type="button"
           onClick={goPrev}
           aria-label="Previous slide"
-          className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-zinc-950/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-[#d8c58b]/60 hover:text-[#d8c58b] focus-visible:opacity-100 group-hover:opacity-100"
+          className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-ink/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-accent/60 hover:text-accent focus-visible:opacity-100 group-hover:opacity-100"
         >
           <span className="rotate-180">
             <ArrowIcon />
@@ -115,12 +115,12 @@ export default function HomeImageSlider() {
           type="button"
           onClick={goNext}
           aria-label="Next slide"
-          className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-zinc-950/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-[#d8c58b]/60 hover:text-[#d8c58b] focus-visible:opacity-100 group-hover:opacity-100"
+          className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-ink/45 text-white opacity-0 backdrop-blur transition duration-500 ease-luxury hover:border-accent/60 hover:text-accent focus-visible:opacity-100 group-hover:opacity-100"
         >
           <ArrowIcon />
         </button>
 
-        <p className="absolute bottom-5 right-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c58b]">
+        <p className="absolute bottom-5 right-6 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
           {String(realIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </p>
 

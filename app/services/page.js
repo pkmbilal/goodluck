@@ -71,8 +71,8 @@ export default function ServicesPage() {
           sizes="100vw"
           className="-z-30 object-cover"
         />
-        <div className="absolute inset-0 -z-20 bg-zinc-950/54" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(23,21,19,0.84),rgba(23,21,19,0.5)_50%,rgba(23,21,19,0.24)),radial-gradient(circle_at_15%_18%,rgba(216,197,139,0.22),transparent_30%)]" />
+        <div className="absolute inset-0 -z-20 bg-ink/54" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,92,63,0.84),rgba(14,92,63,0.5)_50%,rgba(14,92,63,0.24)),radial-gradient(circle_at_15%_18%,rgba(198,241,53,0.22),transparent_30%)]" />
 
         <div className="mx-auto flex min-h-[calc(84dvh-3.75rem)] max-w-7xl items-center md:min-h-[calc(100dvh-10.5rem)]">
           <div className="max-w-5xl">
@@ -118,7 +118,7 @@ export default function ServicesPage() {
             {serviceCards.map((service, index) => (
               <article
                 key={service.title}
-                className={`group relative min-h-[30rem] overflow-hidden rounded-[2rem] bg-zinc-950 ${
+                className={`group relative min-h-[30rem] overflow-hidden rounded-[2rem] bg-ink ${
                   index === 0 ? "lg:col-span-7" : index === 1 ? "lg:col-span-5" : "lg:col-span-4"
                 }`}
               >
@@ -129,16 +129,16 @@ export default function ServicesPage() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover opacity-74 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-88"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,24,27,0.06),rgba(24,24,27,0.9))]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,92,63,0.06),rgba(14,92,63,0.9))]" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c58b]">0{index + 1}</p>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent">0{index + 1}</p>
                   <h3 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">{service.title}</h3>
                   <p className="mt-4 max-w-xl text-base leading-7 text-stone-300">{service.text}</p>
 
                   <ul className="mt-5 grid gap-2 text-sm leading-6 text-stone-200">
                     {service.points.map((point) => (
                       <li key={point} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d8c58b]" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -156,7 +156,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="materials" className="bg-[#171513] px-4 py-24 text-stone-50 md:px-8 md:py-36">
+      <section id="materials" className="bg-ink px-4 py-24 text-stone-50 md:px-8 md:py-36">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr]">
             <div>
@@ -175,7 +175,7 @@ export default function ServicesPage() {
 
               <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-5">
                 {materials.map(([title, image]) => (
-                  <article key={title} className="group relative aspect-square overflow-hidden rounded-[1.35rem] bg-zinc-900">
+                  <article key={title} className="group relative aspect-square overflow-hidden rounded-[1.35rem] bg-ink">
                     <Image
                       src={image}
                       alt={`${title} scrap material`}
@@ -183,7 +183,7 @@ export default function ServicesPage() {
                       sizes="(min-width: 768px) 20vw, 50vw"
                       className="object-cover opacity-78 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-95"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.04),rgba(23,21,19,0.78))]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,92,63,0.04),rgba(14,92,63,0.78))]" />
                     <h3 className="absolute bottom-0 left-0 right-0 p-4 text-sm font-semibold text-white md:text-base">{title}</h3>
                   </article>
                 ))}
@@ -201,7 +201,7 @@ export default function ServicesPage() {
 
               <ul className="mt-8 grid gap-3">
                 {quoteChecklist.map((item) => (
-                  <li key={item} className="rounded-[1.2rem] border border-[#6d5b2f]/12 bg-white/68 px-4 py-3 text-sm font-semibold text-zinc-800">
+                  <li key={item} className="rounded-[1.2rem] border border-accent-strong/12 bg-white/68 px-4 py-3 text-sm font-semibold text-zinc-800">
                     {item}
                   </li>
                 ))}
@@ -235,7 +235,7 @@ export default function ServicesPage() {
           <div className="grid gap-4 md:grid-cols-4">
             {processSteps.map(([number, title, text]) => (
               <article key={number} className="rounded-[1.6rem] bg-[#ede5d9] p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">{number}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">{number}</p>
                 <h3 className="mt-9 text-2xl font-semibold tracking-tight text-zinc-950">{title}</h3>
                 <p className="mt-4 text-base leading-7 text-zinc-600">{text}</p>
               </article>
@@ -247,7 +247,7 @@ export default function ServicesPage() {
       <section id="coverage" className="px-4 pb-24 md:px-8 md:pb-36">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
-            <article className="rounded-[2rem] bg-[#171513] p-7 text-stone-50 md:p-12">
+            <article className="rounded-[2rem] bg-ink p-7 text-stone-50 md:p-12">
               <Badge light>Who we serve</Badge>
               <h2 className="mt-4 text-4xl font-semibold leading-[0.96] tracking-[-0.03em] text-white md:text-6xl">
                 Service coverage
@@ -275,7 +275,7 @@ export default function ServicesPage() {
               <div className="mt-8 grid gap-4 md:grid-cols-2">
                 {trustItems.map(([title, text]) => (
                   <div key={title} className="rounded-[1.4rem] bg-[#f9f5ee] p-5">
-                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6d5b2f]">{title}</p>
+                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-deep">{title}</p>
                     <p className="mt-4 text-sm leading-7 text-zinc-600">{text}</p>
                   </div>
                 ))}
@@ -286,7 +286,7 @@ export default function ServicesPage() {
       </section>
 
       <section id="contact" className="px-4 pb-24 md:px-8 md:pb-36">
-        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.4rem] bg-[#d8c58b] lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.4rem] bg-accent lg:grid-cols-[1.08fr_0.92fr]">
           <div className="p-7 md:p-12 lg:p-16">
             <Badge>Final step</Badge>
             <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] tracking-[-0.03em] text-zinc-950 md:text-6xl">

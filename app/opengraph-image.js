@@ -12,7 +12,7 @@ export default function Image() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #171513 0%, #373028 55%, #d8c58b 100%)",
+          background: "linear-gradient(135deg, #0e5c3f 0%, #146b47 55%, #c6f135 100%)",
           color: "#fff",
           display: "flex",
           flexDirection: "column",
@@ -22,7 +22,7 @@ export default function Image() {
           width: "100%",
         }}
       >
-        <div style={{ color: "#d8c58b", fontSize: 32, fontWeight: 700, letterSpacing: 4, textTransform: "uppercase" }}>
+        <div style={{ color: "#c6f135", fontSize: 32, fontWeight: 700, letterSpacing: 4, textTransform: "uppercase" }}>
           GoodLuck Scrap
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>

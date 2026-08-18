@@ -118,8 +118,8 @@ export default function MaterialsPage() {
           sizes="100vw"
           className="-z-30 object-cover"
         />
-        <div className="absolute inset-0 -z-20 bg-zinc-950/52" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(23,21,19,0.86),rgba(23,21,19,0.42)_52%,rgba(23,21,19,0.16)),radial-gradient(circle_at_16%_20%,rgba(216,197,139,0.24),transparent_28%)]" />
+        <div className="absolute inset-0 -z-20 bg-ink/52" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,92,63,0.86),rgba(14,92,63,0.42)_52%,rgba(14,92,63,0.16)),radial-gradient(circle_at_16%_20%,rgba(198,241,53,0.24),transparent_28%)]" />
 
         <div className="mx-auto flex min-h-[calc(84dvh-3.75rem)] max-w-7xl items-center md:min-h-[calc(100dvh-10.5rem)]">
           <div className="max-w-5xl">
@@ -163,7 +163,7 @@ export default function MaterialsPage() {
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
             {materialCatalog.map((material, index) => (
-              <article key={material.title} className="group overflow-hidden rounded-[1.8rem] bg-[#171513]">
+              <article key={material.title} className="group overflow-hidden rounded-[1.8rem] bg-ink">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src={material.image}
@@ -172,9 +172,9 @@ export default function MaterialsPage() {
                     sizes="(min-width: 1280px) 20vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover opacity-78 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-95"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.1),rgba(23,21,19,0.88))]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,92,63,0.1),rgba(14,92,63,0.88))]" />
                   <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c58b]">0{index + 1}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">0{index + 1}</p>
                     <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white">{material.title}</h3>
                     <p className="mt-3 text-sm font-semibold text-stone-300">{material.type}</p>
                     <p className="mt-4 text-sm leading-6 text-stone-200">{material.summary}</p>
@@ -189,7 +189,7 @@ export default function MaterialsPage() {
       <section id="value" className="px-4 py-24 md:px-8 md:py-36">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-5 lg:grid-cols-[0.98fr_1.02fr]">
-            <article className="rounded-[2rem] bg-[#171513] p-7 text-stone-50 md:p-12">
+            <article className="rounded-[2rem] bg-ink p-7 text-stone-50 md:p-12">
               <Badge light>Value factors</Badge>
               <h2 className="mt-4 text-4xl font-semibold leading-[0.96] tracking-[-0.03em] text-white md:text-6xl">
                 What changes
@@ -256,7 +256,7 @@ export default function MaterialsPage() {
           <div className="grid gap-4 md:grid-cols-4">
             {prepSteps.map(([number, title, text]) => (
               <article key={number} className="rounded-[1.6rem] bg-[#ede5d9] p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">{number}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">{number}</p>
                 <h3 className="mt-9 text-2xl font-semibold tracking-tight text-zinc-950">{title}</h3>
                 <p className="mt-4 text-base leading-7 text-zinc-600">{text}</p>
               </article>
@@ -266,7 +266,7 @@ export default function MaterialsPage() {
       </section>
 
       <section id="contact" className="px-4 pb-24 md:px-8 md:pb-36">
-        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.4rem] bg-[#d8c58b] lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.4rem] bg-accent lg:grid-cols-[1.08fr_0.92fr]">
           <div className="p-7 md:p-12 lg:p-16">
             <Badge>Final step</Badge>
             <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] tracking-[-0.03em] text-zinc-950 md:text-6xl">

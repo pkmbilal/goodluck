@@ -25,9 +25,9 @@ export default function SiteHeader({ navItems = homeNavItems }) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-[80] px-4 pt-4 md:pt-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/55 bg-[#f5f0e7]/86 px-4 py-3 shadow-[0_24px_80px_-58px_rgba(24,24,27,0.72)] backdrop-blur-xl md:px-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/55 bg-[#f5f0e7]/86 px-4 py-3 shadow-[0_24px_80px_-58px_rgba(14,92,63,0.72)] backdrop-blur-xl md:px-5">
         <Link href="/" className="group inline-flex items-center gap-3" aria-label="GoodLuck Scrap home">
-          <span className="grid h-11 w-11 overflow-hidden rounded-full bg-zinc-950 transition duration-500 ease-luxury group-hover:scale-[1.02]">
+          <span className="grid h-11 w-11 overflow-hidden rounded-full bg-ink transition duration-500 ease-luxury group-hover:scale-[1.02]">
             <Image src="/Logo.svg" alt="" width={44} height={44} className="h-full w-full object-cover" />
           </span>
           <span className="hidden text-xs font-bold uppercase tracking-[0.24em] text-zinc-900 sm:block">GoodLuck Scrap</span>
@@ -43,7 +43,7 @@ export default function SiteHeader({ navItems = homeNavItems }) {
                 href={href}
                 aria-current={isActive ? "page" : undefined}
                 className={`rounded-full px-4 py-2 transition duration-500 ease-luxury ${
-                  isActive ? "bg-zinc-950 text-white" : "hover:bg-zinc-950 hover:text-white"
+                  isActive ? "bg-ink text-white" : "hover:bg-ink hover:text-white"
                 }`}
               >
                 {label}
@@ -53,7 +53,7 @@ export default function SiteHeader({ navItems = homeNavItems }) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href={getPhoneHref()} className="hidden text-sm font-bold text-zinc-900 transition duration-500 ease-luxury hover:text-[#6d5b2f] md:block">
+          <a href={getPhoneHref()} className="hidden text-sm font-bold text-zinc-900 transition duration-500 ease-luxury hover:text-accent-deep md:block">
             {contact.phoneNumber}
           </a>
           <a href={whatsappHref} className="nav-quote !hidden md:!inline-flex">

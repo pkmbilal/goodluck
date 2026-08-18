@@ -14,8 +14,8 @@ export default function HeroSection() {
         sizes="100vw"
         className="-z-30 object-cover"
       />
-      <div className="absolute inset-0 -z-20 bg-zinc-950/48" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_20%,rgba(216,197,139,0.22),transparent_32%),linear-gradient(90deg,rgba(23,21,19,0.8),rgba(23,21,19,0.42)_46%,rgba(23,21,19,0.2))]" />
+      <div className="absolute inset-0 -z-20 bg-ink/48" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_20%,rgba(198,241,53,0.22),transparent_32%),linear-gradient(90deg,rgba(14,92,63,0.8),rgba(14,92,63,0.42)_46%,rgba(14,92,63,0.2))]" />
       <div className="mx-auto max-w-7xl">
         <div className="max-w-5xl">
           <Badge light>Scrap buying and recycling</Badge>

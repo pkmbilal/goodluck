@@ -30,8 +30,8 @@ export default function LocationsPage() {
           sizes="100vw"
           className="-z-30 object-cover"
         />
-        <div className="absolute inset-0 -z-20 bg-zinc-950/58" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(23,21,19,0.86),rgba(23,21,19,0.5)_54%,rgba(23,21,19,0.24)),radial-gradient(circle_at_16%_20%,rgba(216,197,139,0.24),transparent_28%)]" />
+        <div className="absolute inset-0 -z-20 bg-ink/58" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,92,63,0.86),rgba(14,92,63,0.5)_54%,rgba(14,92,63,0.24)),radial-gradient(circle_at_16%_20%,rgba(198,241,53,0.24),transparent_28%)]" />
 
         <div className="mx-auto flex min-h-[calc(84dvh-3.75rem)] max-w-7xl items-center md:min-h-[calc(100dvh-10.5rem)]">
           <div className="max-w-5xl">
@@ -68,7 +68,7 @@ export default function LocationsPage() {
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {cityLocations.map((city) => (
-              <Link key={city.slug} href={cityPagePath(city)} className="group overflow-hidden rounded-[2rem] bg-[#171513] text-stone-50">
+              <Link key={city.slug} href={cityPagePath(city)} className="group overflow-hidden rounded-[2rem] bg-ink text-stone-50">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={city.image}
@@ -77,9 +77,9 @@ export default function LocationsPage() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover opacity-78 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-92"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.08),rgba(23,21,19,0.86))]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,92,63,0.08),rgba(14,92,63,0.86))]" />
                   <div className="absolute inset-x-0 bottom-0 p-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#d8c58b]">{city.region}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">{city.region}</p>
                     <h3 className="mt-3 text-3xl font-semibold tracking-tight text-white">{city.name}</h3>
                   </div>
                 </div>

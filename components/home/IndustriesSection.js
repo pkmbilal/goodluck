@@ -5,7 +5,7 @@ import { Badge } from "./SharedUi";
 export default function IndustriesSection() {
   return (
     <section className="px-4 pb-24 pt-0 md:px-8 md:pb-36 md:pt-0">
-      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2.4rem] border border-[#d8c58b]/24 bg-zinc-950 p-6 text-center text-stone-50 shadow-[0_42px_110px_-74px_rgba(23,21,19,0.9)] md:p-12 lg:p-16">
+      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2.4rem] border border-accent/24 bg-ink p-6 text-center text-stone-50 shadow-[0_42px_110px_-74px_rgba(14,92,63,0.9)] md:p-12 lg:p-16">
         <Image
           src="/assets/images/generated-why-choose-scrap-yard.png"
           alt=""
@@ -13,8 +13,8 @@ export default function IndustriesSection() {
           sizes="(min-width: 1024px) 1280px, 100vw"
           className="-z-30 object-cover opacity-76"
         />
-        <div className="absolute inset-0 -z-20 bg-zinc-950/56" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(216,197,139,0.2),transparent_32rem),linear-gradient(180deg,rgba(23,21,19,0.22),rgba(23,21,19,0.72))]" />
+        <div className="absolute inset-0 -z-20 bg-ink/56" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(198,241,53,0.2),transparent_32rem),linear-gradient(180deg,rgba(14,92,63,0.22),rgba(14,92,63,0.72))]" />
 
         <div className="mx-auto flex max-w-5xl flex-col items-center">
           <Badge light>Industries served</Badge>

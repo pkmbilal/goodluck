@@ -61,8 +61,8 @@ export default function ContactPage() {
         id="main-content"
         className="relative isolate min-h-[84dvh] overflow-hidden px-4 pb-12 pt-10 text-white md:min-h-[100dvh] md:px-8 md:pb-14 md:pt-32"
       >
-        <div className="absolute inset-0 -z-30 bg-[radial-gradient(circle_at_20%_20%,rgba(216,197,139,0.18),transparent_28rem),linear-gradient(135deg,rgba(23,21,19,0.96),rgba(23,21,19,0.78))]" />
-        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(23,21,19,0.88),rgba(23,21,19,0.64)_50%,rgba(23,21,19,0.46))]" />
+        <div className="absolute inset-0 -z-30 bg-[radial-gradient(circle_at_20%_20%,rgba(198,241,53,0.18),transparent_28rem),linear-gradient(135deg,rgba(14,92,63,0.96),rgba(14,92,63,0.78))]" />
+        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(14,92,63,0.88),rgba(14,92,63,0.64)_50%,rgba(14,92,63,0.46))]" />
 
         <div className="mx-auto flex min-h-[calc(84dvh-3.75rem)] max-w-7xl items-center md:min-h-[calc(100dvh-10.5rem)]">
           <div className="max-w-5xl">
@@ -106,8 +106,8 @@ export default function ContactPage() {
 
           <div className="grid gap-5 md:grid-cols-3">
             {contactMethods.map((method) => (
-              <article key={method.label} className="rounded-[2rem] bg-[#171513] p-7 text-stone-50 md:p-8">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#d8c58b]">{method.label}</p>
+              <article key={method.label} className="rounded-[2rem] bg-ink p-7 text-stone-50 md:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">{method.label}</p>
                 <p className="mt-5 text-2xl font-semibold tracking-tight text-white">{method.value}</p>
                 <p className="mt-4 text-sm leading-6 text-stone-300">{method.note}</p>
                 <div className="mt-7">
@@ -148,7 +148,7 @@ export default function ContactPage() {
               </ul>
             </article>
 
-            <article className="rounded-[2rem] bg-[#171513] p-7 text-stone-50 md:p-12">
+            <article className="rounded-[2rem] bg-ink p-7 text-stone-50 md:p-12">
               <Badge light>Service area</Badge>
               <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
                 Built for businesses across Saudi Arabia.
@@ -173,7 +173,7 @@ export default function ContactPage() {
           <div className="grid gap-5 lg:grid-cols-4">
             {responseNotes.map(([title, text]) => (
               <article key={title} className="rounded-[1.6rem] bg-[#f9f5ee] p-6">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">{title}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">{title}</p>
                 <p className="mt-5 text-sm leading-7 text-zinc-600">{text}</p>
               </article>
             ))}
@@ -182,7 +182,7 @@ export default function ContactPage() {
       </section>
 
       <section className="px-4 py-16 md:px-8 md:py-16">
-        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.4rem] bg-[#d8c58b] lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.4rem] bg-accent lg:grid-cols-[1.08fr_0.92fr]">
           <div className="p-7 md:p-12 lg:p-16">
             <Badge>Final step</Badge>
             <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] tracking-[-0.03em] text-zinc-950 md:text-6xl">

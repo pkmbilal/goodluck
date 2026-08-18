@@ -20,7 +20,7 @@ export default function ProcessSection() {
         <div className="grid gap-4 md:grid-cols-4">
           {processSteps.map(([number, title, text]) => (
             <article key={number} className="rounded-[1.6rem] bg-[#ede5d9] p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">{number}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">{number}</p>
               <h3 className="mt-9 text-2xl font-semibold tracking-tight text-zinc-950">{title}</h3>
               <p className="mt-4 text-base leading-7 text-zinc-600">{text}</p>
             </article>

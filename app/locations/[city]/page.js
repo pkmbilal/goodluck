@@ -52,8 +52,8 @@ export default async function CityLocationPage({ params }) {
 
       <section id="main-content" className="relative isolate min-h-[84dvh] overflow-hidden px-4 pb-12 pt-10 text-white md:min-h-[100dvh] md:px-8 md:pb-14 md:pt-32">
         <Image src={city.image} alt={`Scrap metal collection service in ${city.name}`} fill priority sizes="100vw" className="-z-30 object-cover" />
-        <div className="absolute inset-0 -z-20 bg-zinc-950/58" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(23,21,19,0.88),rgba(23,21,19,0.52)_54%,rgba(23,21,19,0.22)),radial-gradient(circle_at_16%_20%,rgba(216,197,139,0.24),transparent_28%)]" />
+        <div className="absolute inset-0 -z-20 bg-ink/58" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,92,63,0.88),rgba(14,92,63,0.52)_54%,rgba(14,92,63,0.22)),radial-gradient(circle_at_16%_20%,rgba(198,241,53,0.24),transparent_28%)]" />
 
         <div className="mx-auto flex min-h-[calc(84dvh-3.75rem)] max-w-7xl items-center md:min-h-[calc(100dvh-10.5rem)]">
           <div className="max-w-5xl">
@@ -82,7 +82,7 @@ export default async function CityLocationPage({ params }) {
       <section className="px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
-            <article className="rounded-[2rem] bg-[#171513] p-7 text-stone-50 md:p-12">
+            <article className="rounded-[2rem] bg-ink p-7 text-stone-50 md:p-12">
               <Badge light>Service brief</Badge>
               <h2 className="mt-4 text-4xl font-semibold leading-[0.96] tracking-[-0.03em] text-white md:text-6xl">
                 Built for {city.name}
@@ -93,7 +93,7 @@ export default async function CityLocationPage({ params }) {
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {services.map((service) => (
                   <Link key={service.title} href="/services" className="rounded-[1.2rem] border border-white/10 bg-white/6 px-4 py-4 transition duration-500 ease-luxury hover:bg-white/10">
-                    <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#d8c58b]">{service.title}</p>
+                    <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">{service.title}</p>
                     <p className="mt-3 text-sm leading-6 text-stone-300">{service.text}</p>
                   </Link>
                 ))}
@@ -124,7 +124,7 @@ export default async function CityLocationPage({ params }) {
         </div>
       </section>
 
-      <section className="bg-[#171513] px-4 py-24 text-stone-50 md:px-8 md:py-32">
+      <section className="bg-ink px-4 py-24 text-stone-50 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
@@ -144,7 +144,7 @@ export default async function CityLocationPage({ params }) {
                 const image = material?.[1] || "/assets/images/generated-why-choose-scrap-yard.png";
 
                 return (
-                  <Link key={materialName} href="/materials" className="group relative aspect-square overflow-hidden rounded-[1.35rem] bg-zinc-900">
+                  <Link key={materialName} href="/materials" className="group relative aspect-square overflow-hidden rounded-[1.35rem] bg-ink">
                     <Image
                       src={image}
                       alt={`${materialName} scrap material in ${city.name}`}
@@ -152,7 +152,7 @@ export default async function CityLocationPage({ params }) {
                       sizes="(min-width: 1024px) 18vw, (min-width: 768px) 33vw, 50vw"
                       className="object-cover opacity-78 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-95"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.04),rgba(23,21,19,0.78))]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,92,63,0.04),rgba(14,92,63,0.78))]" />
                     <h3 className="absolute bottom-0 left-0 right-0 p-4 text-sm font-semibold text-white md:text-base">{materialName}</h3>
                   </Link>
                 );
@@ -181,7 +181,7 @@ export default async function CityLocationPage({ params }) {
               </div>
             </article>
 
-            <article className="rounded-[2rem] bg-[#d8c58b] p-7 md:p-12">
+            <article className="rounded-[2rem] bg-accent p-7 md:p-12">
               <Badge>Nearby pages</Badge>
               <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-zinc-950 md:text-4xl">
                 Compare other Saudi service areas.

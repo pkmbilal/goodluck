@@ -86,8 +86,8 @@ export default function IndustriesPage() {
           sizes="100vw"
           className="-z-30 object-cover"
         />
-        <div className="absolute inset-0 -z-20 bg-zinc-950/54" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(23,21,19,0.84),rgba(23,21,19,0.44)_52%,rgba(23,21,19,0.18)),radial-gradient(circle_at_15%_18%,rgba(216,197,139,0.22),transparent_30%)]" />
+        <div className="absolute inset-0 -z-20 bg-ink/54" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,92,63,0.84),rgba(14,92,63,0.44)_52%,rgba(14,92,63,0.18)),radial-gradient(circle_at_15%_18%,rgba(198,241,53,0.22),transparent_30%)]" />
 
         <div className="mx-auto flex min-h-[calc(84dvh-3.75rem)] max-w-7xl items-center md:min-h-[calc(100dvh-10.5rem)]">
           <div className="max-w-5xl">
@@ -131,7 +131,7 @@ export default function IndustriesPage() {
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {industryDetails.map((industry) => (
-              <article key={industry.name} className="group relative min-h-[28rem] overflow-hidden rounded-[2rem] bg-zinc-950">
+              <article key={industry.name} className="group relative min-h-[28rem] overflow-hidden rounded-[2rem] bg-ink">
                 <Image
                   src={industry.image}
                   alt={`${industry.name} industrial scrap context`}
@@ -139,9 +139,9 @@ export default function IndustriesPage() {
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover opacity-74 transition duration-700 ease-luxury group-hover:scale-105 group-hover:opacity-88"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,24,27,0.06),rgba(24,24,27,0.9))]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,92,63,0.06),rgba(14,92,63,0.9))]" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c58b]">{industry.name}</p>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent">{industry.name}</p>
                   <h3 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">{industry.needs}</h3>
                   <p className="mt-4 max-w-xl text-base leading-7 text-stone-300">{industry.materials}</p>
                 </div>
@@ -154,7 +154,7 @@ export default function IndustriesPage() {
       <section id="requirements" className="px-4 py-24 md:px-8 md:pt-16 md:pb-36">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
-            <article className="rounded-[2rem] bg-[#171513] p-7 text-stone-50 md:p-12">
+            <article className="rounded-[2rem] bg-ink p-7 text-stone-50 md:p-12">
               <Badge light>What matters</Badge>
               <h2 className="mt-4 text-4xl font-semibold leading-[0.96] tracking-[-0.03em] text-white md:text-6xl">
                 Every site needs the same basics.
@@ -184,7 +184,7 @@ export default function IndustriesPage() {
               <div className="mt-8 grid gap-4 md:grid-cols-2">
                 {flowSteps.map(([number, title, text]) => (
                   <article key={number} className="rounded-[1.4rem] bg-[#f9f5ee] p-5">
-                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#6d5b2f]">{number}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">{number}</p>
                     <h4 className="mt-6 text-xl font-semibold tracking-tight text-zinc-950">{title}</h4>
                     <p className="mt-3 text-sm leading-6 text-zinc-600">{text}</p>
                   </article>
@@ -226,7 +226,7 @@ export default function IndustriesPage() {
               </div>
             </article>
 
-            <article className="rounded-[2rem] bg-[#171513] p-7 text-stone-50 md:p-12">
+            <article className="rounded-[2rem] bg-ink p-7 text-stone-50 md:p-12">
               <Badge light>Final step</Badge>
               <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">
                 Send the site type and photos, then we will take it from there.
